@@ -1,5 +1,6 @@
 ---
 - hosts: default
   tasks:
-    - apt: update_cache=yes
+    - name: Upgrade Packages
       become: yes
+      apt: update_cache=yes cache_valid_time=600 upgrade=full
